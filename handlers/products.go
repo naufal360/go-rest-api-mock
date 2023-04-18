@@ -10,6 +10,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateProduct godoc
+// @Summary Post a new product data
+// @Description Post details of product corresponding to the input Id
+// @Tags products
+// @Accept json
+// @Produce json
+// @Param Authorization header string true "With the bearer started"
+// @Param models.Product body models.Product true "create products"
+// @Success 201 {object} models.Product
+// @Router /products [post]
 func (h *HttpServer) CreateProduct(c *gin.Context) {
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	contentType := helpers.GetContentType(c)
@@ -33,6 +43,16 @@ func (h *HttpServer) CreateProduct(c *gin.Context) {
 	c.JSON(http.StatusCreated, data)
 }
 
+// GetAllProduct godoc
+// @Summary Get all products data
+// @Description Get details of all products
+// @Tags products
+// @Accept json
+// @Produce json
+// @Param Authorization header string true "With the bearer started"
+// @Param models.Product body models.Product true "get all products"
+// @Success 200 {object} models.Product
+// @Router /products [get]
 func (h *HttpServer) GetAllProduct(c *gin.Context) {
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	contentType := helpers.GetContentType(c)
@@ -57,6 +77,16 @@ func (h *HttpServer) GetAllProduct(c *gin.Context) {
 	c.JSON(http.StatusOK, data)
 }
 
+// GetProductById godoc
+// @Summary Get product data for a given Id
+// @Description Get details of product corresponding to the input Id
+// @Tags products
+// @Accept json
+// @Produce json
+// @Param Authorization header string true "With the bearer started"
+// @Param models.Product body models.Product true "get product"
+// @Success 200 {object} models.Product
+// @Router /products/{productId} [get]
 func (h *HttpServer) GetProductById(c *gin.Context) {
 	contentType := helpers.GetContentType(c)
 
@@ -79,6 +109,16 @@ func (h *HttpServer) GetProductById(c *gin.Context) {
 	c.JSON(http.StatusOK, data)
 }
 
+// UpdateProduct godoc
+// @Summary Update products data by admin
+// @Description Update details of product corresponding to the input Id
+// @Tags products
+// @Accept json
+// @Produce json
+// @Param Authorization header string true "With the bearer started"
+// @Param models.Product body models.Product true "update product"
+// @Success 200 {object} models.Product
+// @Router /products/{productId} [put]
 func (h *HttpServer) UpdateProduct(c *gin.Context) {
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	contentType := helpers.GetContentType(c)
@@ -109,6 +149,16 @@ func (h *HttpServer) UpdateProduct(c *gin.Context) {
 	c.JSON(http.StatusOK, data)
 }
 
+// DeleteProduct godoc
+// @Summary Update products data by admin
+// @Description Delete details of product corresponding to the input Id
+// @Tags products
+// @Accept json
+// @Produce json
+// @Param Authorization header string true "With the bearer started"
+// @Param models.Product body models.Product true "delete product"
+// @Success 200 {object} object{message=string}
+// @Router /products/{productId} [delete]
 func (h *HttpServer) DeleteProductById(c *gin.Context) {
 	userData := c.MustGet("userData").(jwt.MapClaims)
 	contentType := helpers.GetContentType(c)

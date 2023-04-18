@@ -7,6 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// User represents the request for a user
 type User struct {
 	GormModel
 	Fullname string    `gorm:"not null" json:"full_name" form:"full_name" valid:"required~Your full name is required"`

@@ -5,6 +5,7 @@ import (
 	"gorm.io/gorm"
 )
 
+// Product represents the request for a product
 type Product struct {
 	GormModel
 	Title       string `json:"title" form:"title" valid:"required~Title of your product is required"`
