@@ -50,7 +50,6 @@ func (h *HttpServer) CreateProduct(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param Authorization header string true "With the bearer started"
-// @Param models.Product body models.Product true "get all products"
 // @Success 200 {object} models.Product
 // @Router /products [get]
 func (h *HttpServer) GetAllProduct(c *gin.Context) {
@@ -84,7 +83,6 @@ func (h *HttpServer) GetAllProduct(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param Authorization header string true "With the bearer started"
-// @Param models.Product body models.Product true "get product"
 // @Success 200 {object} models.Product
 // @Router /products/{productId} [get]
 func (h *HttpServer) GetProductById(c *gin.Context) {
@@ -156,7 +154,6 @@ func (h *HttpServer) UpdateProduct(c *gin.Context) {
 // @Accept json
 // @Produce json
 // @Param Authorization header string true "With the bearer started"
-// @Param models.Product body models.Product true "delete product"
 // @Success 200 {object} object{message=string}
 // @Router /products/{productId} [delete]
 func (h *HttpServer) DeleteProductById(c *gin.Context) {

@@ -51,12 +51,6 @@ paths:
         name: Authorization
         required: true
         type: string
-      - description: get all products
-        in: body
-        name: models.Product
-        required: true
-        schema:
-          $ref: '#/definitions/models.Product'
       produces:
       - application/json
       responses:
@@ -104,12 +98,6 @@ paths:
         name: Authorization
         required: true
         type: string
-      - description: delete product
-        in: body
-        name: models.Product
-        required: true
-        schema:
-          $ref: '#/definitions/models.Product'
       produces:
       - application/json
       responses:
@@ -135,12 +123,6 @@ paths:
         name: Authorization
         required: true
         type: string
-      - description: get product
-        in: body
-        name: models.Product
-        required: true
-        schema:
-          $ref: '#/definitions/models.Product'
       produces:
       - application/json
       responses:
