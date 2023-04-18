@@ -79,7 +79,7 @@ func (repo *GormMock) GetUserIdProductById(userId uint) (res models.Product, err
 	return res, err
 }
 func (repo *GormMock) UpdateProductById(productId uint, req models.Product) (res models.Product, err error) {
-	arguments := repo.Mock.Called(req)
+	arguments := repo.Mock.Called(productId, req)
 
 	if arguments.Get(0) == nil {
 		return res, nil
